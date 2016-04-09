@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/lib/Navbar';
 import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
 import Helmet from 'react-helmet';
-import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
+import { isLoaded as isPageLoaded, load as loadPage } from 'redux/modules/page';
 import { routeActions } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-async-connect';
@@ -15,8 +15,8 @@ import { asyncConnect } from 'redux-async-connect';
   promise: ({store: {dispatch, getState}}) => {
     const promises = [];
 
-    if (!isInfoLoaded(getState())) {
-      promises.push(dispatch(loadInfo()));
+    if (!isPageLoaded(getState())) {
+      promises.push(dispatch(loadPage()));
     }
 
     return Promise.all(promises);
