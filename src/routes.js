@@ -2,7 +2,7 @@ import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 import {
     App,
-    Page,
+    Home,
     About,
     NotFound,
   } from 'containers';
@@ -13,13 +13,15 @@ export default () => {
    */
   return (
     <Route path="/" component={App}>
-      { /* Main route */ }
-      <IndexRoute component={Page}/>
+      { /* Home route */ }
+      <IndexRoute component={Home}/>
 
-      { /* Routes */ }
+      { /* Other Page Routes */ }
       <Route path="about" component={About}/>
 
       { /* Catch all route */ }
+      { /* FIXME: We may want catchall to try to load a page by slug and have
+        the template sent from the server, then redirect to 404 if not found on server */}
       <Route path="*" component={NotFound} status={404} />
     </Route>
   );

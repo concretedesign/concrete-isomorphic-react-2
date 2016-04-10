@@ -37,9 +37,8 @@ export function isLoaded(globalState) {
 }
 
 export function load() {
-  console.log('in page load');
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.get('/loadPage ')
+    promise: (client) => client.get('/pages?slug=home-page ')
   };
 }

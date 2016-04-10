@@ -1,3 +1,6 @@
+// Main layout for the application
+// Handles loading a page from the API and passing data off to child
+
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { IndexLink } from 'react-router';
@@ -15,6 +18,7 @@ import { asyncConnect } from 'redux-async-connect';
   promise: ({store: {dispatch, getState}}) => {
     const promises = [];
 
+    console.log('in app asyncConnect');
     if (!isPageLoaded(getState())) {
       promises.push(dispatch(loadPage()));
     }
