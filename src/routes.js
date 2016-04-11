@@ -4,6 +4,7 @@ import {
     App,
     Home,
     About,
+    Page,
     NotFound,
   } from 'containers';
 
@@ -18,6 +19,9 @@ export default () => {
 
       { /* Other Page Routes */ }
       <Route path="about" component={About}/>
+
+      { /* Catchall pages */}
+      <Route path="/:page" component={Page}/>
 
       { /* Catch all route */ }
       { /* FIXME: We may want catchall to try to load a page by slug and have

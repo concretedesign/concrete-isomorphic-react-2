@@ -36,9 +36,10 @@ export function isLoaded(globalState) {
   return globalState.page && globalState.page.loaded;
 }
 
-export function load() {
+export function load(pageSlug) {
+  console.log('page slug: ' + pageSlug);
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.get('/pages?slug=home-page ')
+    promise: (client) => client.get('/pages?slug=' + pageSlug)
   };
 }

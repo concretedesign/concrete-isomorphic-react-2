@@ -15,13 +15,16 @@ import config from '../../config';
 import { asyncConnect } from 'redux-async-connect';
 
 @asyncConnect([{
-  promise: ({store: {dispatch, getState}}) => {
+  promise: ({store: {dispatch, getState}, params}) => {
     const promises = [];
-
+    console.log(params);
     console.log('in app asyncConnect');
-    if (!isPageLoaded(getState())) {
-      promises.push(dispatch(loadPage()));
-    }
+    console.log(isPageLoaded(getState()));
+    // if (!isPageLoaded(getState())) {
+    //   promises.push(dispatch(loadPage()));
+    // }
+
+    promises.push(dispatch(loadPage(params.page)));
 
     return Promise.all(promises);
   }
@@ -60,6 +63,12 @@ export default class App extends Component {
             <Nav navbar>
               <LinkContainer to="/about">
                 <NavItem eventKey={4}>About Us</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/sample-page">
+                <NavItem eventKey={4}>Sample Page</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/about-page">
+                <NavItem eventKey={4}>About Page</NavItem>
               </LinkContainer>
             </Nav>
 

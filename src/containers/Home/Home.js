@@ -6,7 +6,7 @@ export default class Home extends Component {
     return (
       <div className="container">
         <Helmet title="Page"/>
-        <h1>Page data goes here</h1>
+        <h1>this is the home page</h1>
       </div>
     );
   }
