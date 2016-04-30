@@ -19,6 +19,7 @@ export default class Page extends Component {
         <Helmet title="Page"/>
         <h1>Page data goes here</h1>
         <h2>{this.props.page[0].title.rendered}</h2>
+        // TODO: Group custom fields by namespace, iterate over them and load corresponding modules (or dump data if module not found)
       </div>
     );
   }

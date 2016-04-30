@@ -17,7 +17,7 @@ export default () => {
       { /* Home route */ }
       <IndexRoute component={Home}/>
 
-      { /* Other Page Routes */ }
+      { /* Other Page Routes (i.e. pages that need a template) */ }
       <Route path="about" component={About}/>
 
       { /* Catchall pages */}
