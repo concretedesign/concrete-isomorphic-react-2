@@ -47,7 +47,7 @@ export default class App extends Component {
 
     return (
       <div className={styles.app}>
-        <Helmet {...config.app.head}/>
+        <Helmet {...config.app.head} />
         <Navbar fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
@@ -67,8 +67,8 @@ export default class App extends Component {
               <LinkContainer to="/about-page">
                 <NavItem eventKey={4}>About Page</NavItem>
               </LinkContainer>
-              <LinkContainer to="/about">
-                <NavItem eventKey={4}>About Template</NavItem>
+              <LinkContainer to="/contact">
+                <NavItem eventKey={4}>Contact Template</NavItem>
               </LinkContainer>
             </Nav>
 

@@ -3,7 +3,7 @@ import { IndexRoute, Route } from 'react-router';
 import {
     App,
     Home,
-    About,
+    Contact,
     Page,
     NotFound,
   } from 'containers';
@@ -18,7 +18,7 @@ export default () => {
       <IndexRoute component={Home}/>
 
       { /* Other Page Routes (i.e. pages that need a template) */ }
-      <Route path="about" component={About}/>
+      <Route path="contact" component={Contact}/>
 
       { /* Catchall pages */}
       <Route path="/:page" component={Page}/>
