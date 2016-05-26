@@ -15,13 +15,18 @@ export default class Page extends Component {
   }
 
   render() {
+    const page = this.props.page ? this.props.page[0] : false;
+    if (!page) return (<div></div>);
+
+    const modules = loadModules((page.acf && page.acf.content) ? page.acf.content : []);
+    console.log('modules');
+
     return (
       <div className="container">
         <Helmet title="Page"/>
         <h1>Page data goes here</h1>
-        <h2>{this.props.page ? this.props.page[0].title.rendered : 'no title'}</h2>
-        // TODO: Group custom fields by namespace, iterate over them and load corresponding modules (or dump data if module not found)
-        <h3>{loadModules((this.props.page && this.props.page[0].acf) ? this.props.page[0].acf : false)}</h3>
+        <h2>{page ? page.title.rendered : 'no title'}</h2>
+        {modules}
       </div>
     );
   }

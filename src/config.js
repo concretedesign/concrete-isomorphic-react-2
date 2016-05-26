@@ -12,7 +12,8 @@ const environment = {
 module.exports = Object.assign({
   host: process.env.HOST || 'localhost',
   port: process.env.PORT,
-  apiHost: 'http://159.203.38.246/wp-json/wp/v2/',
+  // apiHost: 'http://159.203.38.246/wp-json/wp/v2/',
+  apiHost: 'http://localhost:8888/wp-json/wp/v2/',
   app: {
     title: 'Concrete Isomorphic React',
     description: 'All the modern best practices in one example.',
