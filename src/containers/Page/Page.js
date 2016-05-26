@@ -3,6 +3,7 @@ import {bindActionCreators} from 'redux';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
 import {load} from 'redux/modules/page';
+import {loadModules} from 'utils/acf-loader';
 
 @connect(
     state => ({page: state.page.data}),
@@ -20,6 +21,7 @@ export default class Page extends Component {
         <h1>Page data goes here</h1>
         <h2>{this.props.page ? this.props.page[0].title.rendered : 'no title'}</h2>
         // TODO: Group custom fields by namespace, iterate over them and load corresponding modules (or dump data if module not found)
+        <h3>{loadModules((this.props.page && this.props.page[0].acf) ? this.props.page[0].acf : false)}</h3>
       </div>
     );
   }
