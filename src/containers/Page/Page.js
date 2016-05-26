@@ -19,13 +19,11 @@ export default class Page extends Component {
     if (!page) return (<div></div>);
 
     const modules = loadModules((page.acf && page.acf.content) ? page.acf.content : []);
-    console.log('modules');
 
     return (
       <div className="container">
         <Helmet title="Page"/>
-        <h1>Page data goes here</h1>
-        <h2>{page ? page.title.rendered : 'no title'}</h2>
+        <h1>Title: {page ? page.title.rendered : 'no title'}</h1>
         {modules}
       </div>
     );
